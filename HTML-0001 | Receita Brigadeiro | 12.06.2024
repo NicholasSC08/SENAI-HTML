@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="receita_brigadeiro.css">
+    <title>Receita de Brigadeiro</title>
+</head>
+<body>
+    <div class="receitas">
+    <h1 class="texto">Receitas:</h1>
+    <h3 class="texto">Brigadeiro:</h3>
+    <img class="imagem"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyvpy71cQNwQ6ixXg0VcctuC8Gue2C5jaYlKbhOeW-3tPXl8kv5agq-QP2k4mDt_PTzbA&usqp=CAU" alt="Imagem de conjunto de brigadeiro">
+    <p class="texto">Ninguém resiste a essa receita de brigadeiro: ele é o rei das festas de aniversário e é impossível comer um só.<br> Seja pra comemorar ou afogar as,
+         mágoas no com uma panela de brigadeiro assistindo um filme triste,<br> essa receita faz parte do dia a dia do brasileiro há décadas.</p>
+    </div>
+    <div class="ingredientes">
+    <h3 class="texto">Ingredientes:</h3>
+    <ul>
+        <li>1 caixa de leite condensado.</li>
+        <img class="imagem" src="https://static.itdg.com.br/images/40-40/9e1e77f74e7511a66f759ef7eca4cc02/leite-condensado.jpg" alt="Imagem de leite condensado.">
+        <li>7 colheres (sopa) de achocolatado ou 4 colheres (sopa) de chocolate em pó.</li>
+        <img class="imagem" src="https://static.itdg.com.br/images/40-40/c7199d35f01ec6bf9abdaefd91031d4e/achocolado-em-po.jpg" alt="Imagem de achocolatado em pó.">
+        <li>1 colher (sopa) de margarina sem sal.</li>
+        <img class="imagem" src="https://static.itdg.com.br/images/40-40/f608872f7d0ada083a22bad28b4a9fef/margarina-sem-sal.jpg" alt="Imagem de margarina.">
+        <li>Chocolate granulado.</li>
+        <img class="imagem" src="https://static.itdg.com.br/images/40-40/8d7c2e451205c7593c33b884179dab4f/chocolate-granulado.jpg" alt="Imagem de granulado.">
+    </ul>
+    </div>
+    <div class="receitas">
+        <h3 class="texto">Modo de Preparo:</h3>
+        <p class="texto">Modo de preparo: <b>25 minutos.</b></p>
+        <ol>
+            <li>Em uma panela funda, acrescente o leite condensado, a margarina e o chocolate em pó.</li>
+            <br>
+            <li>Cozinhe em fogo médio e mexa até que o brigadeiro comece a desgrudar da panela.</li>
+            <br>
+            <li>Deixe esfriar e faça pequenas bolas com a mão passando a massa no chocolate granulado.</li>
+        </ol>
+    </div>
+</body>
+</html>
