@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1) Criar um projeto com HTML e JS, onde o usuário possa digitar três notas (inputs) e clicar em um botão para calcular a média (mostrar por alert). -->
+    <center>
+        
+        <h1>Média de notas</h1>
+
+        <label>
+            Digite a 1º nota:
+            <br>
+                <input id="inpt_um">
+            <br>
+        </label>
+            <br>
+            <br>
+        <label>
+            Digite 2º nota:
+            <br>
+                <input id="inpt_dois">
+            <br>
+        </label>
+            <br>
+            <br>
+        <label>
+            Digite 3º nota:
+            <br>
+                <input id="inpt_tres">
+            <br>
+            <br>
+        </label>
+        <button onclick="obter_media()">Enviar</button>
+    </center>
+    <script>
+        let elemento_inpt_um = document.getElementById(`inpt_um`);
+        let elemento_inpt_dois = document.getElementById(`inpt_dois`);
+        let elemento_inpt_tres = document.getElementById(`inpt_tres`);
+        const quantidade_de_notas = 3;
+        let soma_numeros;
+        let divisao_numeros;
+
+        function obter_media(){
+
+        soma_numeros = parseFloat(elemento_inpt_um.value) + parseFloat(elemento_inpt_dois.value) + parseFloat(elemento_inpt_tres.value);
+        divisao_numeros = soma_numeros / quantidade_de_notas;
+
+        alert(`Média: ${Number(divisao_numeros.toFixed(2))}`);
+        };
+
+
+    </script>
+</body>
+</html>
