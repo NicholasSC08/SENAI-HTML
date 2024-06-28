@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="f5f5f5">
+
+<center>
+
+    <h1>Soma Números</h1>
+
+    <label>
+    Número 1
+        <br>
+    <input placeholder="Digite o primeiro número" id="inpt_um" value="0">
+    </label>
+        <br>
+        <br>
+    <label>
+    Número 2
+        <br>
+    <input placeholder="Digite o segundo número" id="inpt_dois" value="0">
+    </label>
+        <br>
+        <br>
+        <label>
+            <select id="slct_aritimetico">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="÷">÷</option>
+            </select>
+        </label>
+    <button onclick="opcoes_slct()">Enviar</button>
+</center>
+
+        <script>
+
+        let elemento_numero_um = document.getElementById("inpt_um");
+        let elemento_numero_dois = document.getElementById("inpt_dois");
+        let elemento_slct = document.getElementById("slct_aritimetico");
+
+        function opcoes_slct(){
+            switch(elemento_slct.value){
+                case "+":
+                    soma_numeros();
+                    break;
+
+                case "-":
+                    subtracao_numeros();
+                    break;
+
+                case "x":
+                    multiplicacao_numeros();
+                    break;
+
+                default:
+                    divisao_numeros();
+                    break;
+            };
+        };
+
+
+        function soma_numeros(){
+            let resultado = Number(elemento_numero_um.value) + Number(elemento_numero_dois.value);
+            alert(resultado);
+            
+    };
+
+        function subtracao_numeros(){
+            let resultado = Number(elemento_numero_um.value) - Number(elemento_numero_dois.value);
+            alert(resultado);
+        };
+
+        function multiplicacao_numeros(){
+            let resultado = Number(elemento_numero_um.value) * Number(elemento_numero_dois.value);
+            alert(resultado);
+        };
+
+        function divisao_numeros(){
+            let resultado = Number(elemento_numero_um.value) / Number(elemento_numero_dois.value);
+            alert(resultado);
+        };
+        </script>
+</body>
+</html>
