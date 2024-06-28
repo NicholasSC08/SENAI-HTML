@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 3) Criar um sistema clássico de jogos Tower Defense (Defesa de Torre) de acordo com a imagem disponibilizada.
+     A Torre começa com estrutura em 100 e o usuário pode destruir ou construir, digitando valores nos campos e clicando nos botões de menos e mais.
+     O valor de estrutura deve ser atualizado após destruir ou construir. -->
+<center>
+
+     <h1>Defenda a Torre</h1>
+
+    <label>
+        Estrutura da Torre:
+        <input value="100" id="inpt_torre">
+    </label>
+        <br>
+        <br>
+    <label>
+        Destruir:
+        <input id="inpt_destruir">
+        <button onclick="remover_hp()">-</button>
+    </label>
+        <br>
+        <br>
+    <label>
+        Construir:
+        <input id="inpt_construir">
+        <button onclick="adicionar_hp()">+</button>
+    </label>
+        <br>
+        <br>
+    <label>
+        Situação da Torre:
+        <input value="ATIVA" id="inpt_situacao_da_torre">
+    </label>
+</center>
+    <script>
+
+    let element_inpt_torre = document.getElementById(`inpt_torre`);
+    let element_inpt_destruir = document.getElementById(`inpt_destruir`);
+    let element_inpt_construir = document.getElementById(`inpt_construir`);
+    let element_inpt_situacao_da_torre = document.getElementById(`inpt_situacao_da_torre`);
+    const zero = 0;
+    
+    function adicionar_hp(){
+        element_inpt_torre.value = parseFloat(element_inpt_torre.value) + parseFloat(element_inpt_construir.value);
+
+        if(element_inpt_torre.value <= zero){
+            element_inpt_situacao_da_torre.value = "DESATIVADA";
+        } else {
+            element_inpt_situacao_da_torre.value = "ATIVA";
+        };
+    };
+
+    function remover_hp(){
+        element_inpt_torre.value = parseFloat(element_inpt_torre.value) - parseFloat(element_inpt_destruir.value);
+        
+        if(element_inpt_torre.value <= zero){
+            element_inpt_situacao_da_torre.value = "DESATIVADA";
+        } else {
+            element.element_inpt_situacao_da_torre.value = "ATIVA";
+        };
+    };
+
+
+    </script>
+</body>
+</html>
