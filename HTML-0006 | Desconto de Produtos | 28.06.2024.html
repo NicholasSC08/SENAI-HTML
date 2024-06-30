@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +15,6 @@
   - O usuário deverá informar dados de 4 produtos (descrição, quantidade e valor).
   - Um percentual de desconto deve ser informado.
   - Ao final deve ser mostrado o valor total da compra com o desconto. -->
-
-  <center>
 
     <h1>Desconto em Produtos</h1>
 
@@ -43,19 +42,16 @@
         <b>Quantidade:</b>
         <br>
         <br>
-        <input id="inpt_quantidade_um">
+        <input id="inpt_quantidade_um" value="1">
         <br>
         <br>
-        <input id="inpt_quantidade_dois">
+        <input id="inpt_quantidade_dois" value="1">
         <br>
         <br>
-        <input id="inpt_quantidade_tres">
+        <input id="inpt_quantidade_tres" value="1">
         <br>
         <br>
-        <input id="inpt_quantidade_tres">
-        <br>
-        <br>
-    <input id="inpt_quantidade_quatro">
+    <input id="inpt_quantidade_quatro" value="1">
 </label>
 
     <br>
@@ -65,23 +61,103 @@
     <b>Valor:</b>
     <br>
     <br>
-    <input id="inpt_quantidade_um">
+    <input id="inpt_valor_um">
     <br>
     <br>
-    <input id="inpt_quantidade_dois">
+    <input id="inpt_valor_dois">
     <br>
     <br>
-    <input id="inpt_quantidade_tres">
+    <input id="inpt_valor_tres">
     <br>
     <br>
-    <input id="inpt_quantidade_tres">
-    <br>
-    <br>
-<input id="inpt_quantidade_quatro">
+<input id="inpt_valor_quatro">
 </label>
-</center>
+
+    <br>
+    <br>
+
+<label>
+    <b>Percentual de Desconto:</b>
+    <input id="inpt_prctl_dscnt">
+</label>
+    <br>
+    <br>
+<div>
+<button onclick="valor_final_descontado()">Calcular</button>
+    <br>
+    <br>
+    <b>Valor descontado:</b>
+    <br>
+<input placeholder="Valor Descontado" id="inpt_vlr_dscnt" disabled>
+    <br>
+    <br>
+    <b>Valor total com desconto:</b>
+    <br>
+<input placeholder="Valor Total com Desconto" id="inpt_vlr_ttl_cm_dscnt" disabled>
+    <br>
+    <br>
+    <b>Valor total sem desconto:</b>
+    <br>
+<input placeholder="Valor Total sem Desconto" id="inpt_vlr_ttl_sm_dscnt" disabled>
+</div>
 
 
-<script></script>
+<script>
+
+    let element_inpt_valor_um = document.getElementById(`inpt_valor_um`);
+    let element_inpt_valor_dois = document.getElementById(`inpt_valor_dois`);
+    let element_inpt_valor_tres = document.getElementById(`inpt_valor_tres`);
+    let element_inpt_valor_quatro = document.getElementById(`inpt_valor_quatro`);
+    let element_inpt_prctl_dscnt = document.getElementById(`inpt_prctl_dscnt`);
+    let element_inpt_vlr_fnl = document.getElementById(`inpt_vlr_fnl`);
+    let element_inpt_quantidade_um = document.getElementById(`inpt_quantidade_um`);
+    let element_inpt_quantidade_dois = document.getElementById(`inpt_quantidade_dois`);
+    let element_inpt_quantidade_tres = document.getElementById(`inpt_quantidade_tres`);
+    let element_inpt_quantidade_quatro = document.getElementById(`inpt_quantidade_quatro`);
+    let element_inpt_vlr_dscnt = document.getElementById(`inpt_vlr_dscnt`);
+    let element_inpt_vlr_ttl_cm_dscnt = document.getElementById(`inpt_vlr_ttl_cm_dscnt`);
+    let element_inpt_vlr_ttl_sm_dscnt = document.getElementById(`inpt_vlr_ttl_sm_dscnt`);
+    let quantidade_total_produtos;
+    let quantidade_total_do_inpt_um;
+    let quantidade_total_do_inpt_dois;
+    let quantidade_total_do_inpt_tres;
+    let quantidade_total_do_inpt_quatro;
+    let soma_dos_produtos;
+    let percentual_dos_produtos;
+    let valor_total_com_desconto;
+    let valor_total_sem_desconto;
+    const valor_cem = 100;
+
+        function valor_final_descontado(){
+            quantidade_de_produtos();
+            soma_de_valores_de_produtos();
+            obter_percentual();
+            exibir_resultados();
+        };
+
+        function quantidade_de_produtos(){
+        quantidade_total_do_inpt_um = Number(element_inpt_valor_um.value) * Number(element_inpt_quantidade_um.value);
+        quantidade_total_do_inpt_dois = Number(element_inpt_valor_dois.value) * Number(element_inpt_quantidade_dois.value);
+        quantidade_total_do_inpt_tres = Number(element_inpt_valor_tres.value) * Number(element_inpt_quantidade_tres.value);
+        quantidade_total_do_inpt_quatro = Number(element_inpt_valor_quatro.value) * Number(element_inpt_quantidade_quatro.value);
+        };
+
+        function soma_de_valores_de_produtos(){
+        soma_dos_produtos = quantidade_total_do_inpt_um + quantidade_total_do_inpt_dois + quantidade_total_do_inpt_tres + quantidade_total_do_inpt_quatro;
+        };
+
+        function obter_percentual(){
+            percentual_dos_produtos = soma_dos_produtos * Number(element_inpt_prctl_dscnt.value) / valor_cem;
+            valor_total_sem_desconto = Number(soma_dos_produtos);
+            valor_total_com_desconto = Number(soma_dos_produtos) - percentual_dos_produtos;
+        };
+
+        function exibir_resultados(){
+            element_inpt_vlr_dscnt.value = percentual_dos_produtos.toFixed(2);
+            element_inpt_vlr_ttl_cm_dscnt.value = valor_total_com_desconto.toFixed(2);
+            element_inpt_vlr_ttl_sm_dscnt.value = valor_total_sem_desconto.toFixed(2);
+        };
+
+</script>
 </body>
 </html>
