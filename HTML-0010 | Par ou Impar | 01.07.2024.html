@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3) Programar um sistema onde o usuário preencha 5 números (inputs) com um botão que verifica se os números são pares ou ímpares. Caso algum número não seja preenchido, mostrar "Indefinido". -->
+
+    <div>
+        <h1>Verificar se Par ou Impar:</h1>
+    </div>
+
+    <div class="geral">
+    <div>
+        <label class="numeros">
+            Número 1
+            <input id="inpt_numero_um">
+        </label>
+            <br>
+            <br>
+        <label>
+            Número 2
+            <input id="inpt_numero_dois">
+        </label>
+            <br>
+            <br>
+        <label>
+            Número 3
+            <input id="inpt_numero_tres">
+        </label>
+            <br>
+            <br>
+        <label>
+            Número 4
+            <input id="inpt_numero_quatro">
+        </label>
+            <br>
+            <br>
+        <label>
+            Número 5
+            <input id="inpt_numero_cinco">
+        </label>
+    </div>
+    <div class="resultados">
+        <label>
+            <input id="inpt_resultado_um" placeholder="Resultado" readonly>
+        </label>
+            <br>
+            <br>
+        <label>
+            <input id="inpt_resultado_dois" placeholder="Resultado" readonly>
+        </label>
+            <br>
+            <br>
+        <label>
+            <input id="inpt_resultado_tres" placeholder="Resultado" readonly>
+        </label>
+            <br>
+            <br>
+        <label>
+            <input id="inpt_resultado_quatro" placeholder="Resultado" readonly>
+        </label>
+            <br>
+            <br>
+        <label>
+            <input id="inpt_resultado_cinco" placeholder="Resultado" readonly>
+        </label>
+    </div>
+</div>
+    <div class="botao">
+        <button onclick="call_function()">Verificar</button>
+    </div>
+
+    <style>
+        .geral{
+
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .botao{
+
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        let element_inpt_numero_um = document.getElementById(`inpt_numero_um`);
+        let element_inpt_numero_dois = document.getElementById(`inpt_numero_dois`);
+        let element_inpt_numero_tres = document.getElementById(`inpt_numero_tres`);
+        let element_inpt_numero_quatro = document.getElementById(`inpt_numero_quatro`);
+        let element_inpt_numero_cinco = document.getElementById(`inpt_numero_cinco`);
+        let element_inpt_resultado_um = document.getElementById(`inpt_resultado_um`);
+        let element_inpt_resultado_dois = document.getElementById(`inpt_resultado_dois`);
+        let element_inpt_resultado_tres = document.getElementById(`inpt_resultado_tres`);
+        let element_inpt_resultado_quatro = document.getElementById(`inpt_resultado_quatro`);
+        let element_inpt_resultado_cinco = document.getElementById(`inpt_resultado_cinco`);
+
+            function call_function(){
+
+                comparar_se_par_ou_impar_num_um();
+                comparar_se_par_ou_impar_num_dois();
+                comparar_se_par_ou_impar_num_tres();
+                comparar_se_par_ou_impar_num_quatro();
+                comparar_se_par_ou_impar_num_cinco();
+            };
+
+            function comparar_se_par_ou_impar_num_um(){
+
+                switch(true){
+
+                    case element_inpt_numero_um.value % 2 == 0:
+                        element_inpt_resultado_um.value = `Par`;
+                        break;
+                    default:
+                        element_inpt_resultado_um.value = `Impar`;
+                        break;
+                };
+            };
+
+            function comparar_se_par_ou_impar_num_dois(){
+
+                switch(true){
+
+                    case element_inpt_numero_dois.value % 2 == 0:
+                    element_inpt_resultado_dois.value = `Par`;
+                    break;
+                default:
+                    element_inpt_resultado_dois.value = `Impar`;
+                    break;
+                };
+            };
+
+            function comparar_se_par_ou_impar_num_tres(){
+
+                switch(true){
+
+                    case element_inpt_numero_tres.value % 2 == 0:
+                        element_inpt_resultado_tres.value = `Par`;
+                        break;
+                    default:
+                        element_inpt_resultado_tres.value = `Impar`;
+                        break;
+                };
+            };
+
+            function comparar_se_par_ou_impar_num_quatro(){
+
+                switch(true){
+
+                    case element_inpt_numero_quatro.value % 2 == 0:
+                        element_inpt_resultado_quatro.value = `Par`;
+                        break;
+                    default:
+                        element_inpt_resultado_quatro.value = `Impar`;
+                        break;
+                };
+            };
+
+            function comparar_se_par_ou_impar_num_cinco(){
+
+                switch(true){
+
+                    case element_inpt_numero_cinco.value % 2 == 0:
+                        element_inpt_resultado_cinco.value = `Par`;
+                        break;
+                    default:
+                        element_inpt_resultado_cinco.value = `Impar`;
+                        break;  
+                };
+            };
+    </script>
+</body>
+</html>
