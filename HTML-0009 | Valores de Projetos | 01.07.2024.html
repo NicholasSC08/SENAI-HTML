@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 2) Criar um sistema para gerenciar projetos e valores de projetos, com HTML e JS. O sistema deve deve seguir o layout anexo (imagem). O usuário deverá informar dados de 5 projeto (nome do projeto, valor cobrado por hora e quantidade de horas previstas para concluir). -->
+
+    <div>
+        <h1>Gerenciador Financeiro de Projetos</h1>
+    </div>
+
+    <div>
+        <label>
+            <b>Projeto 1:</b>
+            <input placeholder="Nome do projeto">
+        </label>
+            <br>
+            <br>
+        <label>
+            <b>Projeto 2:</b>
+            <input placeholder="Nome do projeto">
+        </label>
+            <br>
+            <br>
+        <label>
+            <b>Projeto 3:</b>
+            <input placeholder="Nome do projeto">
+        </label>
+            <br>
+            <br>
+        <label>
+            <b>Projeto 4:</b>
+            <input placeholder="Nome do projeto">
+        </label>
+    </div>
+    <div>
+        <label>
+                <br>
+            <b>Valor Hora:</b>
+                <br>
+                <br>
+            <input id="inpt_valor_hora_um">
+                <br>
+                <br>
+            <input id="inpt_valor_hora_dois">
+                <br>
+                <br>
+            <input id="inpt_valor_hora_tres">
+                <br>
+                <br>
+            <input id="inpt_valor_hora_quatro">
+        </label>
+    </div>
+    <div>
+        <label>
+            <br>
+            <b>Quantidade de Horas:</b>
+                <br>
+                <br>
+            <input id="inpt_quantidade_hora_um">
+                <br>
+                <br>
+            <input id="inpt_quantidade_hora_dois">
+                <br>
+                <br>
+            <input id="inpt_quantidade_hora_tres">
+                <br>
+                <br>
+            <input id="inpt_quantidade_hora_quatro">
+        </label>
+    </div>
+    <button onclick="chamada_de_funcao()">Enviar</button>
+    <div id="resultado_a_exibir_um"></div>
+    <div id="resultado_a_exibir_dois"></div>
+    <div id="resultado_a_exibir_tres"></div>
+    <div id="resultado_a_exibir_quatro"></div>
+    <script>
+        let element_inpt_valor_hora_um = document.getElementById(`inpt_valor_hora_um`);
+        let element_inpt_valor_hora_dois = document.getElementById(`inpt_valor_hora_dois`);
+        let element_inpt_valor_hora_tres = document.getElementById(`inpt_valor_hora_tres`);
+        let element_inpt_valor_hora_quatro = document.getElementById(`inpt_valor_hora_quatro`);
+        let element_resultado_a_exibir_um = document.getElementById(`resultado_a_exibir_um`);
+        let element_resultado_a_exibir_dois = document.getElementById(`resultado_a_exibir_dois`);
+        let element_resultado_a_exibir_tres = document.getElementById(`resultado_a_exibir_tres`);
+        let element_resultado_a_exibir_quatro = document.getElementById(`resultado_a_exibir_quatro`);
+        let element_inpt_quantidade_hora_um = document.getElementById(`inpt_quantidade_hora_um`);
+        let element_inpt_quantidade_hora_dois = document.getElementById(`inpt_quantidade_hora_dois`);
+        let element_inpt_quantidade_hora_tres = document.getElementById(`inpt_quantidade_hora_tres`);
+        let element_inpt_quantidade_hora_quatro = document.getElementById(`inpt_quantidade_hora_quatro`);
+        let valor_a_hora_um;
+        let valor_a_hora_dois;
+        let valor_a_hora_tres;
+        let valor_a_hora_quatro;
+        let valor_total_do_projeto_um;
+        let valor_total_do_projeto_dois;
+        let valor_total_do_projeto_tres;
+        let valor_total_do_projeto_quatro;
+
+        function chamada_de_funcao(){
+
+            exibir_resultado();
+            calular_valor_a_hora_um();
+            calular_valor_a_hora_dois();
+            calular_valor_a_hora_tres();
+            calular_valor_a_hora_quatro();
+
+        };
+
+        
+        function calular_valor_a_hora_um(){
+            
+            valor_a_hora_um = Number(element_inpt_valor_hora_um) * Number(element_inpt_quantidade_hora_um);
+        };
+        function calular_valor_a_hora_dois(){
+            
+            valor_a_hora_dois =  Number(element_inpt_valor_hora_dois) * Number(element_inpt_quantidade_hora_dois);
+        };
+        function calular_valor_a_hora_tres(){
+            
+            valor_a_hora_tres =  Number(element_inpt_valor_hora_tres) * Number(element_inpt_quantidade_hora_tres);
+        };
+        function calular_valor_a_hora_quatro(){
+            
+            valor_a_hora_quatro =  Number(element_inpt_valor_hora_quatro) * Number(element_inpt_quantidade_hora_quatro);
+        };
+        
+        function exibir_resultado(){
+
+            element_resultado_a_exibir_um.innerHTML = `Projeto 1: R$${valor_a_hora_um}`;
+            element_resultado_a_exibir_dois.innerHTML = `Projeto 2: R$${valor_a_hora_dois}`;
+            element_resultado_a_exibir_tres.innerHTML = `Projeto 3 R$${valor_a_hora_tres}`;
+        };
+    </script>
+</body>
+</html>
+
