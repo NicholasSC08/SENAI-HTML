@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 5) Criar um sistema de comparação de carros, de acordo com a imagem. Devem ser digitadas notas de 0 a 10 para os 3 critérios (conforto, economia, design) de cada carro, o que irá gerar uma média com duas casas após a vírgula. Ao clicar em comparar, devem ser mostradas a médias de cada carro e o melhor carro (carro com melhor média) nos respectivos campos. -->
+
+    <div class="titulos">
+        <h3>Conforto</h3>
+        <h3>Economia</h3>
+        <h3>Design</h3>
+        <h3>Média</h3>
+    </div>
+
+    <label>
+                <br>
+                <br>
+        Carro 1
+        <div class="carro_um">
+            <input placholder="Nota" id="inpt_nt_cnfrt_um">
+            <input placeholder="Nota" id="inpt_nt_ecnm_um">
+            <input placeholder="Nota" id="inpt_nt_dsgn_um">
+            <input id="inpt_media_um" disabled>
+        </div>
+    </label>
+    <label>
+                <br>
+                <br>
+        Carro 2
+        <div class="carro_dois">
+            <input placeholder="Nota" id="inpt_nt_cnfrt_dois">
+            <input placeholder="Nota" id="inpt_nt_ecnm_dois">
+            <input placeholder="Nota" id="inpt_nt_dsgn_dois">
+            <input id="inpt_media_dois" disabled>
+        </div>
+    </label>
+    <label>
+            <br>
+            <br>
+    Carro 3
+    <div class="carro_tres">
+        <input placeholder="Nota" id="inpt_nt_cnfrt_tres">
+        <input placeholder="Nota" id="inpt_nt_ecnm_tres">
+        <input placeholder="Nota" id="inpt_nt_dsgn_tres">
+        <input id="inpt_media_tres" disabled>
+    </div>
+    </label>
+        <br>
+    <label>
+        <div class="resultados">
+            Melhor Carro 
+            <input placeholder="Resultado" id="inpt_rsltd" disabled>
+            <button onclick="button_react()">Comparar</button>
+        </div>
+    </label>
+
+
+<script>
+        let element_inpt_nt_cnfrt_um = document.getElementById(`inpt_nt_cnfrt_um`);
+        let element_inpt_nt_cnfrt_dois = document.getElementById(`inpt_nt_cnfrt_dois`);
+        let element_inpt_nt_cnfrt_tres = document.getElementById(`inpt_nt_cnfrt_tres`);
+        let element_inpt_nt_ecnm_um = document.getElementById(`inpt_nt_ecnm_um`);
+        let element_inpt_nt_ecnm_dois = document.getElementById(`inpt_nt_ecnm_dois`);
+        let element_inpt_nt_ecnm_tres = document.getElementById(`inpt_nt_ecnm_tres`);
+        let element_inpt_nt_dsgn_um = document.getElementById(`inpt_nt_dsgn_um`);
+        let element_inpt_nt_dsgn_dois = document.getElementById(`inpt_nt_dsgn_dois`);
+        let element_inpt_nt_dsgn_tres = document.getElementById(`inpt_nt_dsgn_tres`);
+        let element_inpt_rsltd = document.getElementById(`inpt_rsltd`);
+        let element_inpt_media_um = document.getElementById(`inpt_media_um`);
+        let element_inpt_media_dois = document.getElementById(`inpt_media_dois`);
+        let element_inpt_media_tres = document.getElementById(`inpt_media_tres`);
+        let soma_dos_input_um;
+        let soma_dos_input_dois;
+        let soma_dos_input_tres;
+        let medias_de_notas_um;
+        let medias_de_notas_dois;
+        let medias_de_notas_tres;
+        let quantidade_de_notas = 3;
+        
+        function button_react(){
+
+            soma_inputs_um();
+            soma_inputs_dois();
+            soma_inputs_tres();
+            obter_media_um();
+            obter_media_dois();
+            obter_media_tres();
+            exibir_resultados_m_um();
+            exibir_resultados_m_dois();
+            exibir_resultados_m_tres();
+            exibir_melhor_carro();
+
+        };
+
+        function soma_inputs_um(){
+
+            soma_dos_input_um = Number(element_inpt_nt_cnfrt_um.value) + Number(element_inpt_nt_ecnm_um.value) + Number(element_inpt_nt_dsgn_um.value);       
+
+        };
+
+        function soma_inputs_dois(){
+
+            soma_dos_input_dois = Number(element_inpt_nt_cnfrt_dois.value) + Number(element_inpt_nt_ecnm_dois.value) + Number(element_inpt_nt_dsgn_dois.value);
+        };
+
+        function soma_inputs_tres(){
+
+            soma_dos_input_tres = Number(element_inpt_nt_cnfrt_tres.value) + Number(element_inpt_nt_ecnm_tres.value) + Number(element_inpt_nt_dsgn_tres.value);
+        };
+
+        function obter_media_um(){
+            
+            medias_de_notas_um = soma_dos_input_um / quantidade_de_notas;
+        };
+
+        function obter_media_dois(){
+            
+            medias_de_notas_dois = soma_dos_input_dois / quantidade_de_notas;
+        };
+
+        function obter_media_tres(){
+        
+            medias_de_notas_tres = soma_dos_input_tres / quantidade_de_notas;
+        };
+
+        function exibir_resultados_m_um(){
+
+            element_inpt_media_um.value = Number(medias_de_notas_um.toFixed(2));
+        };
+     
+        function exibir_resultados_m_dois(){
+
+            element_inpt_media_dois.value = Number(medias_de_notas_dois.toFixed(2));
+        };
+
+        function exibir_resultados_m_tres(){
+
+            element_inpt_media_tres.value = Number(medias_de_notas_tres.toFixed(2));
+        };
+
+        function exibir_melhor_carro(){
+
+            switch(true){
+
+                case element_inpt_media_um.value > element_inpt_media_dois.value && element_inpt_media_um.value > element_inpt_media_tres.value:
+                    element_inpt_rsltd.value = element_inpt_media_um.value;
+                    break;
+
+                case element_inpt_media_dois.value > element_inpt_media_um.value && element_inpt_media_dois.value > element_inpt_media_tres.value:
+                element_inpt_rsltd.value = element_inpt_media_dois.value;
+                break;
+
+                default:
+                element_inpt_rsltd.value = element_inpt_media_tres.value;
+                break;
+            };
+        };
+
+</script>
+<style>
+    .titulos{
+    display: flex;
+    justify-content: space-around;
+}
+.carro_um{
+    display: flex;
+    justify-content: space-around;
+}
+.carro_dois{
+    display: flex;
+    justify-content: space-around;
+}
+.carro_tres{
+    display: flex;
+    justify-content: space-around;
+}
+.resultados{
+    display: flex;
+    justify-content: center;
+}
+</style>
+</body>
+</html>
