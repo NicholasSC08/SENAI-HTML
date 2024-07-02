@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversores de Escala</title>
+</head>
+<body>
+<div>
+    <div class="titulo">
+        <h1>Conversores de Escala</h1>
+        <p>Digite o primeiro valor, no caso o valor que você possui;</p>
+        <p>Já o segundo valor é o valor que você gostária de saber, no caso o valor a ser convertido;</p>
+    </div>
+
+    <div class="alinhamento_da_tabela">
+        <div class="tabela_toda">
+            <div class="tabela_um">
+            <label>
+                
+                <input id="inpt_num_um" value="0">
+                <br>
+                <select id="slct_escolha_de_conversor_de_temperatura_um">
+                    <option value="Celsius">Grau Celsius</option>
+                    <option value="Fahrenheit">Grau Fahrenheit</option>
+                    <option value="Kelvin">Grau Kelvin</option>
+                </select>
+            </label>
+            </div>
+            <p>=</p>
+            <div class="tabela_dois">
+            <label>
+                <input id="inpt_num_dois" value="0">
+                <br>
+                <select id="slct_escolha_de_conversor_de_temperatura_dois">
+                    <option value="Fahrenheit">Grau Fahrenheit</option>
+                    <option value="Celsius">Grau Celsius</option>
+                    <option value="Kelvin">Grau Kelvin</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    
+</div>
+</div>
+<div class="botao">
+    <br>
+    <br>
+<button onclick="call_functions()">Calcular</button>
+</div>
+<style>
+    .tabela_toda{
+        display: flex;
+        justify-content: center;
+        border: 1px solid #cccccc;
+        padding: 50px;
+        width: fit-content;
+        
+    }
+    .tabela_um{
+        margin-right: 25px;
+    }
+    .tabela_dois{
+        margin-left: 25px;
+    }
+    .alinhamento_da_tabela{
+        display: flex;
+        justify-content: center;
+    }
+    #slct_escolha_de_conversor_de_temperatura_um{
+        width: 176px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        height: 50px;
+
+    }
+
+    #slct_escolha_de_conversor_de_temperatura_dois{
+        width: 176px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        height: 50px;
+
+    }
+
+    #inpt_num_um{
+        text-align: center;
+        height: 40px;
+    }
+
+    #inpt_num_dois{
+        text-align: center;
+        height: 40px;
+    }
+
+    .botao{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .titulo{
+        text-align: center;
+    }
+</style>
+<script>
+    let element_inpt_num_um = document.getElementById(`inpt_num_um`);
+    let element_inpt_num_dois = document.getElementById(`inpt_num_dois`);
+    let element_slct_escolha_de_conversor_de_temperatura_um = document.getElementById(`slct_escolha_de_conversor_de_temperatura_um`);
+    let element_slct_escolha_de_conversor_de_temperatura_dois = document.getElementById(`slct_escolha_de_conversor_de_temperatura_dois`);
+    const um_grau_em_fahrenheit = 1.8;
+    const valor_zero_em_fahrenheit = 32;
+    let resultado;
+
+   function call_functions(){
+
+        if(element_slct_escolha_de_conversor_de_temperatura_um.value == `Celsius` && element_slct_escolha_de_conversor_de_temperatura_dois.value == `Fahrenheit`){
+            conversor_de_celsius_para_fahrenheit();
+        }
+    };
+
+    function conversor_de_celsius_para_fahrenheit(){
+       element_inpt_num_dois.value = Number(element_inpt_num_um.value) * um_grau_em_fahrenheit + valor_zero_em_fahrenheit;
+       
+    }
+    
+</script>
+</body>
+</html>
