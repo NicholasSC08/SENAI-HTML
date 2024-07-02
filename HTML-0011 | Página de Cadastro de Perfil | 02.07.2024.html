@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <div class="t">
+    <div>
+        <h1>Cadastro de Perfil</h1>
+    </div>
+    <div>
+        <img src="https://lh5.googleusercontent.com/proxy/9vqIPeIeHQHyGEo43DlSgD-DUtidieclv56O6UoAcYNGPXGNnZwFJL2V7oSodehCB1YT28jit7pMSVjNTnrBOnlBxW0CiRmOeH22FlPockzEbfdQPHLkDMPcgMwWdNfVHF1r2QpUk6W_aY_J87A9lFtYKMHf8_xhkMB7l_4=w1200-h630-p-k-no-nu" alt="Image.pmg" class="img_foto_perfil">
+    </div>
+        <br>
+    <div>
+        <label>
+            Nome:
+            <input type="text" placeholder="Digite seu nome de usuário" class="inpts_text">
+        </label>
+        <br>
+        <br>
+        <label>
+            Senha:
+            <input type="password" placeholder="Digite sua senha
+            " class="inpts_text">
+        </label>
+        <br>
+        <br>
+        <label>
+            E-mail: 
+            <input type="email" placeholder="digitemail@gmail.com" class="inpts_text">
+        </label>
+        <br>
+        <br>
+        <label>
+            <input type="radio" name="nacionalidade" class="special_inpts">
+            Brasileiro
+            <input type="radio" name="nacionalidade" class="special_inpts">
+            Estrangeiro
+            <br>
+            <br>
+            <input type="checkbox" class="special_inpts">
+            Confirmo os dados de cadastro
+        </label>
+    </div>
+    <br>
+    <div>
+        <button class="bttn_um">Abortar Missão</button>
+        <button class="bttn_dois">Confirmar</button>
+    </div>
+    </div>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color:bisque;
+            color: #191919;
+            font-family: "Montserrat", sans-serif;
+            background-image: url("https://cdn.wallpapersafari.com/6/98/y8kgdz.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bttn_um{
+            color: #ffffff;
+            border-radius: 20px;
+            background-color:dimgrey;
+            border: 2px solid dimgrey;
+        }
+        .bttn_dois{
+            background-color: #191919;
+            color: #f5f5f5;
+            border: 2px solid #191919; 
+            border-radius: 20px;
+
+        }
+        .img_foto_perfil{
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            border: solid #191919 1.8px;
+        }
+        .t{
+            margin: 150px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 25px;
+        }
+        .inpts_text{
+            background-color: #f5f5f5;
+            border: #191919 solid 1px;
+            width: 200px;
+            height: 25px;
+        }
+
+        .special_inpts{
+            accent-color: #191919;
+        }
+        .autor{
+
+            text-align: bottom;
+        }
+        </style>
+        </form>
+    </div>
+</body>
+</html>
